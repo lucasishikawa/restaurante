@@ -6,16 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 
-
   <style>
 
-    .comanda {
-      border-style: solid;
-    }
+
     * {
-      padding: 0;
-      margin: 0;
+      padding: 0px;
+      margin: 0px;
       box-sizing: border-box;
+    }
+
+    .row {
+      margin: 0px;
     }
 
     .row::after {
@@ -45,6 +46,7 @@
 
     html {
       font-family: "Lucida Sans", sans-serif;
+      margin: 0px;
     }
 
     body {
@@ -59,9 +61,26 @@
 
     .menu ul {
       list-style-type: none;
-      margin: 0;
-      padding: 0;
+      margin: 0px;
+      padding: 0px;
     }
+
+    #pedido {
+      margin: 0px;
+      padding-left: 12px;
+      position: relative;
+    }
+
+    #print{
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      bottom: 0;
+      visibility: hidden;
+      margin-left: -12px;
+      position: absolute;
+    }
+
 
     #pedido li {
       list-style-type: none;
@@ -85,7 +104,7 @@
       color: black;
       text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
       background-image: url("./img/arroz.png");
-      background-size: 40rem;
+      background-size: 60rem;
     }
     #item_2 {
         background-image: url("./img/feijao2.jpg");
@@ -140,8 +159,8 @@
 
     .menu_pedido ul {
       list-style-type: none;
-      margin: 0;
-      padding: 0;
+      margin: 0px;
+      padding: 0px;
     }
 
     .menu_pedido li {
@@ -160,7 +179,7 @@
       color: black;
       text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
       background-image: url("./img/arroz.png");
-      background-size: 40rem;
+      background-size: 60rem;
     }
     .menu_pedido #item_2_pedido {
         background-image: url("./img/feijao2.jpg");
@@ -217,6 +236,7 @@
     }
 
     button {
+      margin-top: 20px;
       font-size: 20px;
       background-color: #04AA6D;
       color: white;
@@ -241,7 +261,11 @@
       text-align: center;
     }
 
-
+    .comanda {
+      border-style: solid;
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
 
   </style>
 </head>
@@ -254,7 +278,7 @@
 
   <p class="cliente col-12">Cliente: Scarlett Johansson</p>
 
-  <div class="row">
+  <div class="row col-12">
     <div class="col-6 menu">
       <ul>
         <li></li>
@@ -273,14 +297,17 @@
     <div id="pedido" class="col-6 menu_pedido">
       <li class="client" id="nome"> Cliente: Scarlett Johansson</li>
       <li class="client" id="marmitex"> Marmitex média</li>
-    </div>
+      <button id="print" class="button" onclick="printContent('pedido');">Imprimir</button>
+      </div>
 
+    </div>
 
     <button class="button col-12" onclick="fecharComanda()"> Fechar comanda </button>
 
   </div>
 
   <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.6.0.min.js"></script>
   <script>
     function incluir(item) {
       var nome = document.getElementById(item).innerText;
@@ -306,10 +333,23 @@
     }
 
     function fecharComanda() {
+      document.getElementById('print').style.visibility = 'visible';
       document.getElementById("pedido").setAttribute("class", "comanda col-6");
       document.getElementById("nome").setAttribute("class", "x");
       document.getElementById("marmitex").setAttribute("class", "x");
     }
+
+
+    function printContent(el){
+      document.getElementById('print').style.visibility = 'hidden';
+      var restorepage = $('body').html();
+      var printcontent = $('#' + el).clone();
+      $('body').empty().html(printcontent);
+      window.print();
+      $('body').html(restorepage);
+      document.getElementById('print').style.visibility = 'visible';
+    }
+    </script>
   </script>
 </body>
 
