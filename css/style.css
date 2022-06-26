@@ -1,0 +1,319 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+}
+
+.row {
+  margin: 0;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  justify-content: center;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+  margin: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#pedido {
+  margin: 0;
+  padding-left: 12px;
+  position: relative;
+}
+
+#print {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  visibility: hidden;
+  margin-left: -12px;
+  position: absolute;
+}
+
+#pedido li {
+  list-style-type: none;
+}
+
+.menu li {
+  font-size: 20px;
+  padding: 18px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+}
+
+.menu li:nth-child(1) {
+  display: none;
+}
+
+.menu li:nth-child(2) {
+  display: none;
+}
+
+#item_1 {
+  border-radius: 0.5rem;
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  background-image: url("./img/arroz.png");
+  background-size: 60rem;
+}
+
+#item_2 {
+  background-image: url("./img/feijao2.jpg");
+  background-size: 82rem;
+  border-radius: 0.5rem;
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+#item_3 {
+  border-radius: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-image: url("./img/bife.jpg");
+  background-size: 42rem;
+}
+
+#item_4 {
+  border-radius: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-image: url("./img/tilapia.jpg");
+  background-size: 76rem;
+}
+
+#item_5 {
+  border-radius: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-image: url("./img/legumes.jpg");
+  background-size: 60.5rem;
+}
+
+#item_6 {
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  border-radius: 0.5rem;
+  background-size: 60.5rem;
+  background-image: url("./img/salada.jpg");
+}
+
+#item_7 {
+  border-radius: 0.5rem;
+  background-image: url("./img/tomate.jpg");
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-size: 70.5rem;
+}
+
+#item_8 {
+  border-radius: 0.5rem;
+  background-image: url("./img/farofa.jpg");
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  background-size: 80.5rem;
+}
+
+.menu li:hover {
+  opacity: 0.7;
+}
+
+.menu_pedido ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu_pedido li {
+  font-size: 20px;
+  padding: 18px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+}
+
+.menu_pedido li:nth-child(1) {
+  display: none;
+}
+
+.menu_pedido li:nth-child(2) {
+  display: none;
+}
+
+.menu_pedido #item_1_pedido {
+  border-radius: 0.5rem;
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  background-image: url("./img/arroz.png");
+  background-size: 60rem;
+}
+
+.menu_pedido #item_2_pedido {
+  background-image: url("./img/feijao2.jpg");
+  background-size: 82rem;
+  border-radius: 0.5rem;
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.menu_pedido #item_3_pedido {
+  border-radius: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  background-image: url("./img/bife.jpg");
+  background-size: 42rem;
+}
+
+.menu_pedido #item_4_pedido {
+  border-radius: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  background-image: url("./img/tilapia.jpg");
+  background-size: 76rem;
+}
+
+.menu_pedido #item_5_pedido {
+  border-radius: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  background-image: url("./img/legumes.jpg");
+  background-size: 60.5rem;
+}
+
+.menu_pedido #item_6_pedido {
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  border-radius: 0.5rem;
+  background-size: 60.5rem;
+  background-image: url("./img/salada.jpg");
+}
+
+.menu_pedido #item_7_pedido {
+  border-radius: 0.5rem;
+  background-image: url("./img/tomate.jpg");
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-size: 70.5rem;
+}
+
+.menu_pedido #item_8_pedido {
+  border-radius: 0.5rem;
+  background-image: url("./img/farofa.jpg");
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  background-size: 80.5rem;
+}
+
+.menu_pedido li:hover {
+  opacity: 0.7;
+}
+
+button {
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+.client {
+  display: none;
+}
+
+#marmitex {
+  font-weight: bold;
+  text-align: center;
+}
+
+#nome {
+  font-weight: bold;
+  text-align: center;
+}
+
+.comanda {
+  border-style: solid;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
